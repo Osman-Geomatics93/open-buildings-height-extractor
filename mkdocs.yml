@@ -1,66 +1,180 @@
-site_name: Extracting Building Heights
-site_url: https://github.com/Osman-Geomatics93/open-buildings-height-extractor.git/
+site_name: 🏙️ Building Heights Extraction Hub
+site_url: https://osman-geomatics93.github.io/open-buildings-height-extractor/
 site_author: Osman Ibrahim
-repo_url: https://github.com/Osman-Geomatics93/open-buildings-height-extractor.git
+repo_url: https://github.com/Osman-Geomatics93/open-buildings-height-extractor
 repo_name: GitHub
-edit_uri: ""
+edit_uri: edit/main/docs/
+site_description: "Master building height extraction from Google's Open Buildings 2.5D Temporal Dataset with cutting-edge techniques and modern visualization tools"
 
 theme:
   name: material
-  logo: assets/logo.png           # Optional: place logo in docs/assets/
-  favicon: assets/favicon.ico     # Optional: place favicon in docs/assets/
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  icon:
+    logo: fontawesome/solid/building
+    repo: fontawesome/brands/github
   palette:
+    # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
-      accent: green
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
-      accent: green
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Inter
+    code: Fira Code
+    
   features:
-    - navigation.expand
+    # Navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    
+    # Table of contents
+    - toc.follow
     - toc.integrate
-    - header.autohide
+    
+    # Search
     - search.highlight
     - search.suggest
-    - content.tabs.link
+    - search.share
+    
+    # Header
+    - header.autohide
+    
+    # Content
     - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
     - content.action.edit
     - content.action.view
+    
+    # Announce
+    - announce.dismiss
 
 nav:
-  - Home: index.md
-  - Introduction: introduction.md
-  - Dataset Overview: dataset-overview.md
-  - Method 1: method-1-gee.md
-  - Method 2: method-2-python.md
-  - Method 3: method-3-web-explorer.md
-  - QGIS: qgis.md
-  - Advanced Visualization Techniques: advanced-viz.md
-  - Troubleshooting & Tips: troubleshooting.md
-  - Applications: applications.md
-  - Additional Resources: resources.md
-  - Conclusion: conclusion.md
+  - 🏠 Home: 
+    - index.md
+  - 🚀 Getting Started:
+    - 📘 Introduction: introduction.md
+    - 📊 Dataset Overview: dataset-overview.md
+  - 🛠️ Extraction Methods:
+    - 🛰️ Google Earth Engine: method-1-gee.md
+    - 🐍 Python Direct Download: method-2-python.md
+    - 🌐 Web Explorer: method-3-web-explorer.md
+  - 🎨 Visualization:
+    - 🗺️ Working with QGIS: qgis.md
+    - 📊 Advanced Visualization: advanced-viz.md
+  - 🏗️ Applications:
+    - 🌆 Real-World Applications: applications.md
+    - 🛠️ Troubleshooting & Tips: troubleshooting.md
+  - 📚 Resources:
+    - 🔗 Additional Resources: resources.md
+    - ✅ Conclusion: conclusion.md
 
 markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
   - toc:
       permalink: true
-  - admonition
+      title: On this page
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
   - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
-
-extra_css:
-  - assets/extra.css         # Optional: custom styling (you can create this file)
+      emoji_index: !!python/name:pymdownx.emoji.gemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: Osman-Geomatics93
+      repo: open-buildings-height-extractor
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Osman-Geomatics93/open-buildings-height-extractor
+      name: GitHub Repository
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:open-buildings-dataset@google.com
+      name: Contact Team
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/extra.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - assets/tablesort.js
