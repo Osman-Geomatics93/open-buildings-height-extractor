@@ -1,0 +1,66 @@
+site_name: Extracting Building Heights
+site_url: https://github.com/Osman-Geomatics93/open-buildings-height-extractor.git/
+site_author: Osman Ibrahim
+repo_url: https://github.com/Osman-Geomatics93/open-buildings-height-extractor.git
+repo_name: GitHub
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/logo.png           # Optional: place logo in docs/assets/
+  favicon: assets/favicon.ico     # Optional: place favicon in docs/assets/
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: green
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.expand
+    - navigation.sections
+    - toc.integrate
+    - header.autohide
+    - search.highlight
+    - search.suggest
+    - content.tabs.link
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - Dataset Overview: dataset-overview.md
+  - Method 1: method-1-gee.md
+  - Method 2: method-2-python.md
+  - Method 3: method-3-web-explorer.md
+  - QGIS: qgis.md
+  - Advanced Visualization Techniques: advanced-viz.md
+  - Troubleshooting & Tips: troubleshooting.md
+  - Applications: applications.md
+  - Additional Resources: resources.md
+  - Conclusion: conclusion.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra_css:
+  - assets/extra.css         # Optional: custom styling (you can create this file)
+
+plugins:
+  - search
